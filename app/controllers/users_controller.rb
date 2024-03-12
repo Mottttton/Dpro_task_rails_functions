@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      binding.irb
       UserMailer.with(to: user_params[:email], name: user_params[:name]).welcome.deliver_later
       redirect_to user_path(@user.id), notice: 'アカウントを登録しました。'
     else
