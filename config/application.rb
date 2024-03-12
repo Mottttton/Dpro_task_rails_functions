@@ -11,6 +11,7 @@ module RailsFunctionsTaskApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
+    config.active_job.queue_adapter = :sidekiq
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
